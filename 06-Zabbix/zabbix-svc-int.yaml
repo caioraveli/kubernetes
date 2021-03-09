@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zabbix-svc-int
+spec:
+  selector:
+    type: backend
+  ports:
+    - port: 10050
+      name: zabbix-srv-port
+    - port: 5432
+      name: postgres-port
+  type: ClusterIP
